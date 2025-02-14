@@ -44,7 +44,6 @@ int main()
     {
         vectorA.push_back(5+i);
     }
-
     cout << endl << "After: ";
 
     for(int i = 0; i < vectorA.size(); i++)
@@ -64,5 +63,10 @@ int main()
         {
             cout << endl << vectorA[i];
         }
+
+    
+
     return 0;
+
+    
 }
