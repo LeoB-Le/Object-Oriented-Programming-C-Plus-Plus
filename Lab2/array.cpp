@@ -5,35 +5,41 @@ using namespace std;
 /*
 * @brief prints the elements 
 *
- @param arr - array of intergers
- * @param size - ther numbero f elements oin the array
+ @param arrayA - array of intergers
+ * @param sizeA - ther numbero f elements oin the array
  */
 
- void printMemArr(const int * arr, int size) 
-{// void printMemArr(int arr[], int size)
-printf ("Array - Each int is worth %lu bytes\n", sizeof(arr[0]));
-for(int i = 0; i < size; i++)
+void printMemArr(const int * arrayA, int sizeA) 
+{// void printMemArr(int arrayA[], int sizeA)
+printf ("Array - Each int is worth %lu bytes\n", sizeof(arrayA[0]));
+for(int i = 0; i < sizeA; i++)
 {
-    printf("Value: %i at Memory location: %p\n", arr[i], arr+i);
+    printf("Value: %i at Memory location: %p\n", arrayA[i], arrayA+i);
 }
 }
 
-void incArrBy10(int * arr, int size) // void incArrBy10(int arr[], int size)
+void incArrBy10(int * arrayA, int sizeA) // void incArrBy10(int arrayA[], int sizeA)
 {
-    for(int i = 0; i < size; i++)
-    {arr[i] += 10;}
+    for(int i = 0; i < sizeA; i++)
+    {arrayA[i] = arrayA[i] + 10;}
 }
+
 int main ()
 {
-    const int SIZE = 5;
-    int arr[SIZE];
-    for(int i = 0; i < SIZE; i++)
-    {arr[i] = 100 + i;}
+    const int sizeA = 5;
+    int arrayA[sizeA];
+
+        for(int i = 0; i < sizeA; i++)
+            {
+                arrayA[i] = 100 + i;
+            }
     printf ("Before---------\n");
-    printMemArr(arr, SIZE);
-    incArrBy10(arr, SIZE);
+    printMemArr(arrayA, sizeA);
+    incArrBy10(arrayA, sizeA);
     printf("After---------\n");
-    printMemArr(arr, SIZE);
+    printMemArr(arrayA, sizeA);
+    int a = &arrayA[4] - &arrayA[0];
+cout << a;
     return 0;
 }
 
