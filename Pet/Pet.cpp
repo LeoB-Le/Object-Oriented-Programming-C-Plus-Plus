@@ -1,5 +1,4 @@
 #include "Pet.h"
-#include <iostream>
 #include <string>
 
 using namespace std;
