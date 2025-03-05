@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "pet": "cpp",
+        "iostream": "cpp"
+    }
+}
