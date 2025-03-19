@@ -19,8 +19,8 @@ class RPG
         void setSkills();
         void printAction(string skill, RPG opponent);
         void updateHealth(int newHealth);
-        void attack(RPG * );
-        void useSkill(RPG *);
+        void attack(RPG * opponent);
+        void useSkill(RPG * opponent);
 
 
     private:
