@@ -7,7 +7,7 @@ RPG::RPG()
 {
     name = "NPC";
     health = 100;
-    strength = 10;
+    strength = 30;
     defense = 10;
     type = "warrior";
     skills[0] = "slash";
@@ -73,7 +73,7 @@ void RPG::setSkills()
 void RPG::printAction(string skill, RPG opponent)
 {
    // printf("%s used %s on %s\n", name.c_str(), skill.c_str(), opponent.getName().c_str());
-    cout << name << " used " << skill << " on " << opponent.getName() << endl;
+    cout << name << " used " << skill << " on " << opponent.getName() << endl << endl;
 
 }
 
@@ -83,8 +83,8 @@ void RPG::updateHealth(int newHealth)
 }
 
 bool RPG::isAlive() const
-{
-    if (health > 0)
+{ 
+   if (health > 0)
     {
         return true;
     }
@@ -94,27 +94,35 @@ bool RPG::isAlive() const
 
 void RPG::attack(RPG * opponent)
 {
-    int new_health;
+    int new_health = opponent->getHealth();
     int a = max(strength, opponent->getDefense());
     int b = min(strength, opponent->getDefense());
         if (strength > opponent->getDefense() > 0)
         {
-            new_health = health - (a - b);
+            new_health = (*opponent).getHealth() - (a - b);
        
         } 
-    opponent ->updateHealth(new_health);
+    (*opponent).updateHealth(new_health);
 }
 
 void RPG::useSkill(RPG * opponent)
 {
-    
     for (int i = 0; i < skill_size; i++)
     {
          //printf("Skill %i: %s\n", i, skills[i].c_str());
        cout << "Skill " << i << ": " << skills[i] << endl;
     }
+
+    int chosen_skill_index = -1;
+    string chosen_skill = "";
+
+    //printf("Choose a skill to use: 0 or 1\n");
+    cout << "Choose a skill to use: Enter 0 or 1\n";
+
+    cin >> chosen_skill_index;
+    chosen_skill = skills[chosen_skill_index];
+
+    printAction(chosen_skill, * opponent);
+    attack(opponent);
 }
-
-
-
 
