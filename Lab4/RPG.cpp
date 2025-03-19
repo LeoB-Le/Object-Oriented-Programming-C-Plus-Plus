@@ -94,15 +94,15 @@ bool RPG::isAlive() const
 
 void RPG::attack(RPG * opponent)
 {
-    int new_health = opponent->getHealth();
+    //int new_health = 100; //opponent->getHealth() why this work too
     int a = max(strength, opponent->getDefense());
     int b = min(strength, opponent->getDefense());
         if (strength > opponent->getDefense() > 0)
         {
-            new_health = (*opponent).getHealth() - (a - b);
-       
+            int new_health = (*opponent).getHealth() - (a - b);
+            (*opponent).updateHealth(new_health);
         } 
-    (*opponent).updateHealth(new_health);
+    
 }
 
 void RPG::useSkill(RPG * opponent)

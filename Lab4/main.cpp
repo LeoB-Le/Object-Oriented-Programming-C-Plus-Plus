@@ -12,18 +12,20 @@ void gameLoop(RPG * player1B, RPG * player2B)
 {
     while (((*player1B).isAlive() == 1) && ((*player2B).isAlive() == 1))
     {
+
+        displayStats(* player1B, * player2B);
         if (player1B->getHealth() > 0)
         {
-        displayStats(* player1B, * player2B);
         cout << player1B->getName() << "'s turn" << endl << endl;
         //(*player1B).useSkill(player2B);
         player1B->useSkill(player2B);
         cout << ">--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<" << endl << endl;
         }
 
+        displayStats(* player1B, * player2B);
         if (player2B->getHealth() > 0)
         {
-        displayStats(* player1B, * player2B);
+        
         cout << player2B->getName() << "'s turn" << endl << endl;
         //(*player2B).useSkill(player1B);
         player2B->useSkill(player1B);
