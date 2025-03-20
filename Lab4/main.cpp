@@ -68,13 +68,12 @@ int main()
     */
    cout << ">--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<" << endl << endl;
 
-    RPG p1 = RPG("Master Wu", 100, 45, 15, "mage");
+    RPG p1 = RPG("Master Wu", 70, 45, 15, "mage");
     RPG p2 = RPG();
-    p1.setSkills();
+    p1.setSkills(); //why dont work
 
     gameLoop(&p1, &p2);
     displayEnd(p1, p2);
 
     return 0;
-    
 }

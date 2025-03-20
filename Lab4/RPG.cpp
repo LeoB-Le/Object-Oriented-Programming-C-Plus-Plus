@@ -109,8 +109,8 @@ void RPG::useSkill(RPG * opponent)
 {
     for (int i = 0; i < skill_size; i++)
     {
-         //printf("Skill %i: %s\n", i, skills[i].c_str());
-       cout << "Skill " << i << ": " << skills[i] << endl;
+        //printf("Skill %i: %s\n", i, skills[i].c_str());
+        cout << "Skill " << i << ": " << skills[i] << endl;
     }
 
     int chosen_skill_index = -1;
