@@ -8,7 +8,7 @@ RPG::RPG()
     name = "NPC";
     health = 100;
     strength = 30;
-    defense = 50;
+    defense = 10;
     type = "warrior";
     skills[0] = "slash";
     skills[1] = "parry";
@@ -125,3 +125,4 @@ void RPG::useSkill(RPG * opponent)
     printAction(chosen_skill, * opponent);
     attack(opponent);
 }
+
